@@ -2,8 +2,8 @@
 FROM openjdk:8-jdk-alpine
 
 # Environment variables
-ENV TOMCAT_MAJOR=8 \
-    TOMCAT_VERSION=8.5.85 \
+ENV TOMCAT_MAJOR=9 \
+    TOMCAT_VERSION=9.0.71 \
     CATALINA_HOME=/opt/tomcat
 
 # init
@@ -22,6 +22,8 @@ RUN curl -jkSL -o /tmp/apache-tomcat.tar.gz http://archive.apache.org/dist/tomca
 # cleanup
 RUN apk del curl && \
     rm -rf /tmp/* /var/cache/apk/*
+
+RUN rm -rf $CATALINA_HOME/webapps/*
 
 EXPOSE 8080
 
