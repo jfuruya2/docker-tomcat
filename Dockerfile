@@ -29,6 +29,8 @@ RUN rm -rf $CATALINA_HOME/webapps/*
 
 EXPOSE 8080
 
+EXPOSE 8009
+
 COPY startup.sh /opt/startup.sh
 
 ENTRYPOINT /opt/startup.sh
