@@ -3,7 +3,7 @@ FROM openjdk:8-jdk-alpine
 
 # Environment variables
 ENV TOMCAT_MAJOR=9 \
-    TOMCAT_VERSION=9.0.71 \
+    TOMCAT_VERSION=9.0.76 \
     CATALINA_HOME=/opt/tomcat
 
 # init
@@ -18,6 +18,8 @@ RUN curl -jkSL -o /tmp/apache-tomcat.tar.gz http://archive.apache.org/dist/tomca
     gunzip /tmp/apache-tomcat.tar.gz && \
     tar -C /opt -xf /tmp/apache-tomcat.tar && \
     ln -s /opt/apache-tomcat-$TOMCAT_VERSION $CATALINA_HOME
+
+COPY server.xml /opt/tomcat/conf/server.xml
 
 # cleanup
 RUN apk del curl && \

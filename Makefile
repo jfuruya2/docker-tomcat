@@ -1,4 +1,4 @@
-version=9.0.71
+version=9.0.76
 repository=191229699519.dkr.ecr.ap-northeast-1.amazonaws.com/alpine-tomcat
 image=alpine-tomcat
 
